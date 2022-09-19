@@ -1,0 +1,52 @@
+
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    background-color:teal;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 90px;
+    height: 50px;
+    padding: 15px;            
+}
+#samnav{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+}
+#samnav:hover{
+    color: red;
+}
+#fpage{
+    display: flex;
+    gap:20px;
+    padding: 20px;
+    justify-content: center;
+}
+#page{
+    cursor: pointer;
+    margin-top: 100px;
+    padding: 10px 15px;
+    background-color:teal;
+    color: white;
+    font-size: 18px;
+   font-weight: bolder;
+    border-radius: 10%;
+    border: none;
+}
+#page:hover{
+    color: red;
+}
+#maindiv{
+    margin-left: 20%;
+    margin-top: 100px;
+    /* border: 1px solid red; */
+}
+#pagination{
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 100px;
+}

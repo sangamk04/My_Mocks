@@ -1,0 +1,58 @@
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    background-color:teal;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 90px;
+    height: 50px;
+    padding: 15px;            
+}
+#samnav{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+}
+#samnav:hover{
+    color: red;
+}
+#reisterform{
+    justify-content: center;
+    margin-top: 100px;
+}
+#submit{
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+}
+#names{
+    font-weight: bold;
+}
+#email{
+   padding: 7px;
+}
+#pass{
+    padding: 7px;
+ }
+ #description{
+    padding: 7px;
+ }
+ #username{
+    padding: 7px;
+ }
+ #mobile{
+    padding: 7px;
+ }
+ #name{
+    padding: 7px;
+ }
+ #submitForm{
+   justify-content: center;
+   text-align: center;
+   width: 400px;
+   margin-bottom: 20px;
+   border: 1px solid black;
+ }

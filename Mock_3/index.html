@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">  
+    <title>Masai Mart</title>   
+</head>
+<body>
+   
+<!-- ---------------------------------navbar----------------------------------- -->
+
+    <div id="navbar">
+        <div class="navphoto"><img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f6cd-fe0f.svg"> </div>
+        <a href="./index.html" id="samnav">Products</a>
+        <a href="./wishlist.html" id="samnav">Wishlist</a>
+    </div>
+
+ <!-- --------------------------------------------filter-------------------------------------------------- -->
+
+    <div id="filter">
+        <h4 id="filterH">Filter By Category</h4>
+        <select name="role" id="productCategory" onchange="productCategory()">
+            <option value="default">Select</option>
+            <option value="kids">KIDS</option>
+            <option value="men">MEN</option>
+            <option value="women">WOMEN</option>          
+            <option value="homedecor">Home Decorator</option>
+        </select>
+    </div>
+
+   <!-- ------------------------------------------main ----------------------------------- -->
+
+    <div id="sunny"></div>
+
+   <!-- ---------------------------------------------------page---------------------------------- -->
+
+
+    <div id="fpage">
+        <button id="page1">1</button>
+        <button id="page2">2</button>
+        <button id="page3">3</button>
+        <button id="page4">4</button>
+    </div>
+
+</body>
+</html>
+<script>
+
+    var sunny=document.querySelector("#sunny");
+    var sorttingOrder = 'desc';
+
+
+   
+    async function getdata(pageNo) {
+        var url= `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-products?page=${pageNo}&limit=12&orderBy=${sorttingOrder}`;
+        let data= await fetch(url)
+        let res= await data.json()
+        arr = res.data     
+        appendproduct(res.data)
+    }
+    getdata(1);   
+  
+    
+    function appendproduct(data) {
+        sunny.innerHTML = ''
+        data.forEach(function (el){
+         
+            let mainCard = document.createElement("div")
+            mainCard.setAttribute('id', 'mainCard')
+         
+            let pic = document.createElement("img")
+            pic.setAttribute('id', 'pic')
+            pic.src =el.image;            
+         
+            let contentDiv = document.createElement("div")
+            contentDiv.setAttribute('id', 'contentDiv')
+      
+            let contentDivLeftPart=document.createElement("div")
+            contentDivLeftPart.setAttribute('id', 'contentDivLeftPart');
+         
+            let title=document.createElement("p")
+            title.innerText = el.title;
+        
+            let brand=document.createElement("p")
+            brand.innerText=el.brand;
+          
+            let price=document.createElement("p")
+            price.innerText =  "$" +" "+ el.price;         
+            
+           
+            let contentDivRightPart = document.createElement("div")
+            contentDivRightPart.setAttribute('id', 'contentDivRightPart')
+          
+            let wishlist = document.createElement("p")
+            wishlist.setAttribute('id', 'wishlist')
+            wishlist.innerText ="❤️"
+          
+            let category = document.createElement("p")
+            category.innerText = el.category;            
+           
+            contentDivLeftPart.append(title,brand,price);
+            contentDivRightPart.append(wishlist,category)
+            
+            contentDiv.append(contentDivLeftPart,contentDivRightPart)
+            mainCard.append(pic,contentDiv)
+            sunny.append(mainCard)
+        })
+    }
+    
+
+   
+    var store=[]
+    async function storeAlData(){
+        for(var i=1; i<=4; i++){
+            var url=`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-products?page=${i}&limit=10&orderBy=desc`;
+            let data=await fetch(url)
+            let res=await data.json()
+            arr=res.data
+            store.push(...arr)
+        }
+     
+    }
+    storeAlData();
+   
+     function productCategory(){
+        var role = document.querySelector("#productCategory").value;
+        if(role=="default")
+        {
+            getdata(1);
+
+        }
+        else if(role=="women"){
+            let temp = store.filter((e,ind)=>e.category=="women")
+            appendproduct(temp);
+
+        }
+        else if(role=="men")
+        {
+            let temp =store.filter((e,ind)=>e.category=="men")
+            appendproduct(temp);
+
+        }
+        else if(role=="kids")
+        {
+            let temp =store.filter((e,ind)=>e.category=="kids")
+            appendproduct(temp);
+
+        }
+        else if(role=="homedecor")
+        {
+            let temp =store.filter((e,ind)=>e.category=="homedecor")
+            appendproduct(temp);
+        }
+    }
+
+  
+    var page1 = document.querySelector("#page1");
+    var page2 = document.querySelector("#page2");
+    var page3 = document.querySelector("#page3");
+    var page4 = document.querySelector("#page4");
+
+    page1.addEventListener('click',function(){getdata(1)});
+    page2.addEventListener('click',function(){getdata(2)});
+    page3.addEventListener('click',function(){getdata(3)});
+    page4.addEventListener('click',function(){getdata(4)});
+    
+</script>

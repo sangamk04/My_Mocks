@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">  
+    <title>Register</title>   
+</head>
+<body>
+   
+<!-- ---------------------------------navbar----------------------------------- -->
+
+    <div id="navbar">
+        <div> </div>
+        <a href="./index.html" id="samnav">Home</a>
+        <a href="./employee.html" id="samnav">Employees</a>
+        <a href="./login.html" id="samnav">Login</a>
+        <a href="./register.html" id="samnav">Register</a>
+    </div>
+
+ 
+   <!-- ------------------------------------------main ----------------------------------- -->
+
+   <div id="reisterform">
+    <form id="submitForm">
+        <p id="names">Name</p>
+        <input type="text" placeholder="Enter your name" id="name" />
+        <br/>
+
+        <p id="names">Email</p>
+        <input type="email" placeholder="Enter your email" id="email" />
+        <br/>
+
+        <p id="names">Password</p>
+        <input type="password" placeholder="Enter your password" id="pass" />
+        <br/>
+
+        <p id="names">Username</p>
+        <input type="text" placeholder="Enter your Username" id="username" />
+        <br/>
+
+        <p id="names">Mobile</p>
+        <input type="number" placeholder="Enter your mobile" id="mobile" />
+        <br/>
+
+        <p id="names">Description</p>
+        <input type="text" placeholder="Enter your description" id="description" />
+        <br/>
+
+        <input id="submit" type="submit" value='SUBMIT'/>
+    </form>
+
+</div>
+
+</body>
+</html>
+
+<script>
+    var inputData = document.querySelector("form");
+    inputData.addEventListener("submit", registrationForm);
+
+    async function registrationForm(event) {
+        event.preventDefault();
+        var email = inputData.email.value;
+        var name = inputData.name.value;
+        var username = inputData.username.value;
+        var password = inputData.pass.value;
+        var mobile = inputData.mobile.value;
+        var description = inputData.description.value;
+
+        var dataObj = {
+            email,
+            name,
+            username,
+            password,
+            mobile,
+            description
+        };
+
+        fetch("https://masai-api-mocker.herokuapp.com/auth/register", {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",body: JSON.stringify(dataObj),
+        }).then((res)=>res.json())
+
+        .then((e)=>{
+            if(!e.error){
+                alert('Registration Success');
+                window.location.href="./login.html"
+            }            
+            else
+            {
+                alert('Registration failed, user already exists');
+            }
+        })
+
+        .catch((err)=>{
+            console.log(err);
+            alert('Registration failed, user already exists');
+        })
+    }
+</script>

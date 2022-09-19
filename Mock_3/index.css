@@ -1,0 +1,107 @@
+
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    background-color:pink;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 90px;
+    height: 50px;
+    padding: 15px;            
+}
+#samnav{
+    text-decoration: none;
+
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+}
+#samnav:hover{
+    color: red;
+}
+#filterH{
+    color: red;
+}
+
+#sunny{
+    display: grid;   
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+    gap:10px;
+}
+@media all and (min-width: 450px) and (max-width: 790px){
+    #sunny{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media all and (min-width: 250px) and (max-width: 450px){
+    #sunny{
+        grid-template-columns: 1fr;
+    }
+}
+
+#mainCard {
+    /* border: 1px solid red; */
+    margin: auto; 
+
+}
+#mainCard:hover {
+    /* border: 1px solid red; */
+   color: red;
+   font-weight: bolder;
+ 
+}
+
+
+#filter{
+    display: flex;
+    justify-content: center;
+    height:30px;
+    margin-top: 90px;
+    align-items: center;
+    gap:20px;
+}
+#productCategory{
+    height:30px;
+    width:200px;
+    text-align: center;
+}
+
+
+#fpage{
+    display: flex;
+    gap:20px;
+    padding: 20px;
+    justify-content: center;
+}
+#page1, #page2, #page3, #page4{
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 10px 15px;
+    background-color:pink;
+    color: white;
+    font-size: 18px;
+   font-weight: bolder;
+    border-radius: 10%;
+    border: none;
+}
+
+.navphoto{
+    margin-top: -5px;
+    margin-left: -150px;
+    /* margin-bottom: -10x; */
+    width: 50px;
+    cursor: pointer;
+    height: 50px;
+}
+#wishlist{
+    margin-left: 180px;
+    margin-top: -40px;
+    cursor: pointer;
+
+    /* border: 1px solid red; */
+}

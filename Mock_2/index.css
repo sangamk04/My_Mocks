@@ -1,0 +1,108 @@
+
+body{
+    background-color: #c76294;
+}
+.jobs{
+    gap: 10px; 
+    width: 1250px;
+    height: 200px;
+}
+.company{
+    font-weight: bolder;
+    color: #69acac; 
+    width: 100px;
+}
+.location{
+    font-weight: bolder;
+    color: hsl(180,7%,71%); 
+    width: 150px;
+    margin-left: 200px;
+    margin-top: -35px;
+}
+.role{
+    border: 1px solid #79b4b4;
+    color: #79b4b4;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px;
+    margin-top: 10px;
+    width: 80px;
+    background-color: #edf6f6;
+
+}
+.level{
+   border: 1px solid #79b4b4;
+    background-color: #edf6f6;
+    color: #79b4b4;  
+    width: 80px;
+    margin-left: 100px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px;
+    margin-top: -43px;
+}
+.language{
+   border: 1px solid #79b4b4;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px;
+    background-color: #edf6f6; 
+    width: 80px;
+    color: #79b4b4;
+    margin-left: 200px;
+    margin-top: -42px;
+  
+}
+.rating-section{
+ height: 50px;
+    width: 400px;
+  
+    margin-left: 610px;
+    margin-top: -100px;
+}
+.price-section{
+  
+    width: 400px;
+ 
+    margin-left: 200px;
+    margin-top: -150px;
+}
+.card-detail{
+    border: 1px solid rgb(36, 33, 33); 
+    margin-top: 5px;
+    border-radius: 10px;
+    height: 150px;
+    box-shadow:2px 5px 10px 0px grey;
+    background-color: white;
+    margin-left: 200px;
+}
+.pop-name{
+    border: 2px solid rgb(36, 33, 33); 
+  
+}
+
+
+.photo{ 
+    margin-left: 10px;
+    margin-top: 40px;
+    position: relative;
+    width: 100px; 
+    border-radius: 50px;
+}
+
+.postedat{
+    color: hsl(180,7%,71%);
+}
+
+.contract{
+    margin-top: -40px;
+    font-weight: bolder;
+    color: #79b4b4;  
+    margin-left: 300px;
+    border: 1px solid #79b4b4;
+    width: 90px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #edf6f6;
+}
+
