@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add_Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <div id="navbar">     
+        <a href="./index.html" id="samnav">ADD PAGE</a>
+        <a href="./car.html" id="samnav">Car</a>
+        <a href="./wish.html" id="samnav">Wish_List</a>
+    </div>
+
+
+
+
+   
+    <div style="margin-top: 100px;" id="sangam">
+        <h1>Car Details</h1>
+      
+        <form id="form">
+
+           
+           
+                <p>Select_Car_Brand_Name</p>
+                <select name="cbrand" id="cbrand">
+                    <option value="#">Select</option>
+                    <option value="Tata">Tata</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="ford">Ford</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Bugati">Bugati</option>
+                </select>
+           
+
+
+          
+            
+                <p>Select_manual_Or_Automated</p>
+
+                <select name="manualau" id="manualau">
+                    <option value="#">Choose</option>
+                    <option value="Manual ">Manual</option>
+                    <option value="Automated ">Automated</option>
+                </select>
+           
+           
+            
+          
+                <p>Select_Purchase_Year</p>
+                <select name="pyear" id="pyear">              
+                    <option value="2016 ">2018 </option>
+                    <option value="2016 ">2019 </option>
+                    <option value="2016 ">2020 </option>
+                    <option value="2016 ">2021 </option>
+                    <option value="2016 ">2022 </option>
+                </select>
+          
+           
+                <p>K.M_Driven</p>
+                <input id="driven" type="number" placeholder="driven"/>
+           
+       
+           
+                <p>Description</p>
+                <input id="Description" type="text" placeholder="Description"/>
+            
+          
+            
+           
+                <p>PRICE</p>
+                <input id="price" type="number" placeholder="Price"/>
+
+                <br/> <br/>
+           
+            <input type="submit" id="submit" value="Submit"/>
+        </form>
+    </div>
+
+
+  
+    <div id="otpBox" class="Sam">
+
+
+
+        <div class="mainBox">
+            <span class="cut">&times;</span>
+            <div class="finput">
+
+
+                <p>ENTER OTP</p>
+                <div class="inBox">
+                    <input type="text"
+                     class="otp1" id="firstbox" maxlength="1" onkeyup="shiftFocus(this,'secondbox')" />
+                    <input type="text"
+                     class="otp2" id="secondbox" maxlength="1" onkeyup="shiftFocus(this,'thirdbox')" />
+                    <input type="text"
+                     class="otp3" id="thirdbox" maxlength="1" onkeyup="shiftFocus(this,'fourthbox')" />
+                    <input type="text"
+                     class="otp4" id="fourthbox" maxlength="1" />
+                </div>
+
+                <button id="confirmOtpBtn">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script src="myscript.js"></script>
+
+

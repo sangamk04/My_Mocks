@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <link rel="stylesheet" href="data.css">
+</head>
+<body>
+
+
+    <div id="navbar">
+
+        <a href="./index.html" id="samnav">USER</a>    
+        <a href="./login.html" id="samnav">LOG-IN</a>
+        <a href="./data.html" id="samnav">DATA</a>
+        <a href="./report.html" id="samnav">REPORT</a>
+    </div>
+
+    <div id="register">
+
+        <div><h1>Masai Aluminee</h1></div>
+        <div><input type="text" id="search" onkeyup="openSearch()">
+            <button onclick="openSearch();">search</button></div>
+        <div>
+            <select name="" id="batchfitrer" onchange="filterbatch()">
+                <option value="">Batch</option>
+                <option value="web=16">web-16</option>
+                <option value="web-17">web-17</option>
+                <option value="web-18">web-18</option>
+            </select>
+
+        </div>
+        <div>
+            <select name="" id="agesort" onchange="agesort()">
+                <option value="">Age</option>
+
+                <option value="lh">Low to high</option>
+                <option value="hl">High to Low</option>
+              
+            </select>
+        </div>
+       
+    </div>
+   
+    <div id="body"></div>
+
+    
+</body>
+</html>
+
+<script>
+    let arr=[]
+    const user= async()=>{
+        let res=await fetch('https://sangammock5.herokuapp.com/users');
+        let data= await res.json();
+        arr.push(...data);
+        displaydata(data)
+    }
+
+    console.log(arr)
+    user()
+ const displaydata=(data)=>{
+   document.querySelector("#body").innerHTML=null
+    data.forEach((el)=>{
+        let main=document.createElement("div")
+        main.className="dcard"
+        let img=document.createElement("img")
+        img.src="https://ca.slack-edge.com/T03VBJ1HPEK-U040EGFDYSE-8b4717c86975-72"
+        let name=document.createElement("p")
+        name.innerText="Name"+"-"+ el.name
+        let place=document.createElement("p")
+        place.innerText="Place"+"-"+el.place
+        let age=document.createElement("p")
+        age.innerText="Age"+"-"+el.age
+        let pro=document.createElement("p")
+        pro.innerText="Proffession"+"-"+el.profession
+        let batch=document.createElement("p")
+        batch.innerText="Batch"+"-"+el.batch_name
+
+       
+        let div=document.createElement("div")
+        let edit = document.createElement("button")
+        edit.innerText="Edit"
+        let dele=document.createElement("button")
+        dele.innerText="Delete"
+        dele.addEventListener('click', function (e) {
+      e.preventDefault();
+      console.log(el.id)
+      fetch(`https://sangammock5.herokuapp.com/users/${el.id}`, {
+        method: 'DELETE',
+        header: {
+          'content-type': 'application/json',
+        },
+      })
+        .then((r) => r.json())
+        ;
+    });
+        div.append(edit,dele)
+        main.append(img,name,pro,batch,place,age,div)
+        document.getElementById("body").append(main)
+    })
+ }
+
+ const agesort=()=> {
+  let ageval = document.getElementById('agesort');
+  if (ageval.value == 'lh') {
+    let newarr=arr.sort((a, b) => a.age - b.age);
+    
+    displaydata(newarr);
+  } else if (ageval.value == 'hl') {
+    newarr = arr.sort((a, b) => b.age - a.age);
+    displaydata(newarr);
+  }
+}
+const filterbatch =()=> {
+  let val = document.getElementById('batchfitrer').value;
+  let batch = arr.filter((el) => el.batch_name == val);
+  console.log(batch);
+  displaydata(batch);
+}
+function openSearch() {
+  let val = document.getElementById('search').value;
+  if(val){
+    let newdata = arr.filter((ele) => ele.name.toLowerCase().includes(val.toLowerCase()));
+    displaydata(newdata);
+  }
+  else
+  {
+    displaydata(arr)
+  } 
+  
+}
+
+</script>

@@ -1,0 +1,41 @@
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    background-color:pink;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 90px;
+    height: 50px;
+    padding: 15px;            
+}
+#samnav{
+    text-decoration: none;
+
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+}
+#samnav:hover{
+    color: red;
+}
+#fform{
+    /* border: 1px solid red; */
+    margin-top: 100px;
+    width: 400px;
+    margin-left: 300px;
+}
+#Log{
+    margin-left: 50px;
+}
+#loginMainDiv{
+    margin-left: 50px;
+    /* border: 1px solid black; */
+}
+#submit{
+    margin-top: 10px;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 5px;
+}

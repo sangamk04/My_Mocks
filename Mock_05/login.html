@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+
+    <div id="navbar">
+
+        <!-- <a href="./index.html" id="samnav">USER</a>     -->
+        <a href="./login.html" id="samnav">LOG-IN</a>
+        <a href="./data.html" id="samnav">DATA</a>
+        <a href="./report.html" id="samnav">REPORT</a>
+    </div>
+
+
+    <div id="fform">
+        <h1 id="Log">Login Details</h1>
+
+        <div id="loginMainDiv">
+            <form id="form">
+
+                <p>USER NAME</p>
+                <input type="text" placeholder="Enter Username" id="username" />
+
+                <p>PASSWORD</p>
+                <input type="text" placeholder="Enter Password" id="password" />
+                <br/>
+
+                <input id="submit" type="submit" />
+
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+
+<script>
+    var token = JSON.parse(localStorage.getItem("UserTokenMock5"));
+  
+    if (token) {
+        window.location.href = "./data.html"
+    }
+
+    var loginFormdata = document.querySelector("form");
+    loginFormdata.addEventListener("submit", LoginFormSubmitting);
+
+    async function LoginFormSubmitting(event) {
+        event.preventDefault();
+        var username = loginFormdata.username.value;
+        var password = loginFormdata.password.value;
+
+      
+        let obj = {
+            username,
+            password,
+        };
+
+      
+        let LoginRequest = await fetch("https://reqres.in/api/login", {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify(obj),
+            })
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res);
+                alert("Login Successful !!")
+                localStorage.setItem('UserTokenMock5', JSON.stringify(res.token));
+                window.location.href = "./data.html"
+            })
+            .catch((res) => {
+                alert("Login Failed !!")
+                console.log(res);
+            });
+    }
+</script>

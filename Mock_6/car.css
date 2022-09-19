@@ -1,0 +1,59 @@
+
+#navbar{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    background-color:#c14c8a ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 90px;
+    height: 50px;
+    padding: 15px; 
+          
+}
+#samnav{
+    text-decoration: none;
+    color:white;
+    font-weight: bolder;
+    font-size: 30px;
+}
+#samnav:hover{
+    color: red;
+}
+
+.card{
+   margin-top: 20px;
+   /* border: 1px solid red; */
+   display: grid;
+   grid-template-columns: repeat( 4 1fr);
+}
+#cars{
+    margin-left: 80px;
+    display: grid;
+    grid-template-columns: repeat(4,300px);
+    grid-template-rows: auto;
+    justify-content: space-around;  
+   gap: 20px;
+   text-align: center;
+   align-items: center;
+}
+#becar{
+    text-align: center;
+    margin-top: 100px;
+}
+
+#samsort{
+    display: flex;
+    gap: 8px;
+}
+#sortprice{
+    height: 30px;
+}
+#kms{
+    height: 30px;
+}
+#cbrand{
+    height: 30px;
+}

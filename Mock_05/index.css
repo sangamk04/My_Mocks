@@ -1,0 +1,73 @@
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    background-color:pink;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 90px;
+    height: 50px;
+    padding: 15px;            
+}
+#samnav{
+    text-decoration: none;
+
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+}
+#samnav:hover{
+    color: red;
+}
+#heading{
+    margin-left: 20%;
+    margin-top: 80px;
+}
+
+#submit{
+    color: white;
+    background-color: black;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+body{
+    background-color: aquamarine;
+}
+#bform{
+    /* border: 1px solid gray; */
+    margin-left: 450px;
+    width: 400px;
+    min-height: 500px;
+    border-radius: 5px;
+    background-color: white;
+}
+#form{
+    margin-left: 30%;
+}
+#submit:hover{
+    color: red;
+}
+#name{
+    border:none;
+    border-bottom: 1px solid black;
+}
+#age{
+    border:none;
+    border-bottom: 1px solid black;
+}
+#place{
+    border:none;
+    border-bottom: 1px solid black;
+}
+#batch{
+    border:none;
+    border-bottom: 1px solid black;
+}
+#profession{
+    border:none;
+    border-bottom: 1px solid black;
+}

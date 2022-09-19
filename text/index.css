@@ -1,0 +1,123 @@
+.container{
+  display: flex;
+  width: 80%;    
+  margin: auto;
+  margin-top: 200px;
+}
+.container>div{    
+    margin: auto;
+}
+.leftt {
+    position: relative;
+    display: inline-block;
+    background-color: teal;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+  }
+  
+  .leftt .leftttext {
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;  
+    position: absolute;
+    z-index: 1;   
+    right: 110%;
+  }
+  
+  .leftt:hover .leftttext {
+    visibility: visible;
+  }
+  .rightt {
+    position: relative;
+    border-radius: 10px;
+    font-size: 30px;
+    display: inline-block;
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    border-bottom: 1px dotted black;
+  }
+  
+  .rightt .rightttext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;   
+    position: absolute;
+    z-index: 1;
+    left: 105%;
+  }
+  
+  .rightt:hover .rightttext {
+    visibility: visible;
+  }
+
+  .toptooltip {
+    border-radius: 10px;
+    font-size: 30px;
+    position: relative;
+    display: inline-block;
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    border-bottom: 1px dotted black;
+  }
+  
+  .toptooltip .toptooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;   
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .toptooltip:hover .toptooltiptext {
+    visibility: visible;
+  }
+  .bottt {
+    position: relative;
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .bottt .bottttext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;   
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .bottt:hover .bottttext {
+    visibility: visible;
+  }
+  

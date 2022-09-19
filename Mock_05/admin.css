@@ -1,0 +1,22 @@
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    background-color:pink;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 90px;
+    height: 50px;
+    padding: 15px;            
+}
+#samnav{
+    text-decoration: none;
+
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+}
+#samnav:hover{
+    color: red;
+}

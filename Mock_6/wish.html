@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish_List</title>
+    <link rel="stylesheet" href="wish.css">
+</head>
+<body>
+
+    <div id="navbar">     
+        <a href="./index.html" id="samnav">ADD PAGE</a>
+        <a href="./car.html" id="samnav">Car</a>
+        <a href="./wish.html" id="samnav">Wish_List</a>
+    </div>
+
+    <h1 id="wishil" style="margin-top: 100px;">WISH_LIST</h1>
+    <div id="cars"></div>
+
+    
+</body>
+</html>
+
+<script>
+    const getcar=async()=>{
+    let res= await fetch(`https://sammock6.herokuapp.com/wishlisted_cars`)
+    let data=await res.json()
+    display(data)
+}
+
+
+getcar()
+const display=(data)=>{
+    document.getElementById('cars').innerHTML=null
+    data.forEach((el)=>{
+      let card=document.createElement('div')
+      card.className="card"
+
+        let image=document.createElement('img')
+        image.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVT407XRdbAmN4uCbMPMycplWanA-XT__ob5n2WucAQA&s"
+
+        let namediv=document.createElement('div');
+        namediv.className = 'namediv';
+        let year=document.createElement('h3')
+        year.innerText=el.year
+
+
+        let brands=document.createElement('h3')
+        brands.innerText=el.brand
+
+       let typ=document.createElement('p')
+       typ.innerText=el.type
+       let div1=document.createElement('div')
+       div1.append(typ)
+       typ.style.color="red"
+
+
+       let price=document.createElement('p')
+       price.style.color="blue"
+       price.innerText= "$"+el.Price
+       let div2=document.createElement('div')
+       div2.append(price)
+
+
+       let km=document.createElement('p')
+       km.innerText=el.kms+"/km"
+       km.style.color="black"
+       let div3=document.createElement('div')
+       div3.append(km)
+
+
+       let divlex=document.createElement('div')
+       divlex.className="divlex"
+       divlex.append(div1,div2,div3)
+
+
+       let btndiv=document.createElement('div')
+       btndiv.classList="like-button"
+       let edit=document.createElement('button')
+       edit.innerText="Edit"
+
+
+       let dele=document.createElement('button')
+       dele.innerText="delete"
+       dele.addEventListener('click', function (e) {
+        e.preventDefault();
+        console.log(el.id)
+
+        fetch(`https://sammock6.herokuapp.com/cars/${el.id}`,{
+          method: 'DELETE',
+          header: {
+            'content-type': 'application/json',
+          },
+        })
+          .then((r) => r.json())
+          ;
+      });
+
+
+       let like=document.createElement('button')
+       like.innerText="❤️"
+
+       
+
+       btndiv.append(edit,dele,like)
+        namediv.append(year,brands)
+
+        let des=document.createElement('h5')
+        des.innerText=el.Description
+        card.append(image,namediv,divlex,des,btndiv)
+        document.getElementById("cars").append(card)
+
+    })
+}
+</script>

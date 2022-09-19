@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div id="navbar">     
+        <a href="./index.html" id="samnav">USER</a>
+        <a href="./admin.html" id="samnav">ADMIN</a>
+    </div>
+
+
+
+
+
+    <div id="bform">
+        <h1 id="heading"><ul style="color:blue; ">Register Form</ul></h1>
+
+        <form action="" id="form">
+
+            <p>Your_Name</p>
+            <input type="text" placeholder="Name" id="name">
+
+            <p>Age</p>
+            <input type="number" placeholder="Age" id="age">
+
+            <p>Place</p>
+            <input type="text" placeholder="Place" id="place">
+          
+           
+            <p>Select_Batch_Name</p>
+            <select name="" id="batch" onchange="batchfn()">
+                <option value="#">Batch</option>
+                <option value="web-16">WB-16</option>
+                <option value="web-17">WB-17</option>
+                <option value="web-18">WB-18</option>
+            </select>
+
+            <p>Select_your_Profession</p>
+            <select name="" id="profession" onchange="professionfn()">
+                <option value="">Profession</option>
+                <option value="frontend">Frontend_Developer</option>
+                <option value="backend">Backend_Developer</option>
+                <option value="full-stack">Full_Stack_Developer</option>
+            </select>
+
+            <br>
+            <input type="submit" value="Submit" id="submit" >
+            
+        </form>
+    </div>
+
+    
+</body>
+</html>
+
+<script>
+
+    let user=document.getElementById("form");
+    user.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        let name=document.getElementById("name").value;
+        let place=document.getElementById("place").value;
+        let age=document.getElementById("age").value;
+        let batch=batchfn()
+        let pro=professionfn()
+       fetch(`https://swatijsonserver28.herokuapp.com/users`,{
+        method: 'POST',
+      body: JSON.stringify({
+    name: name,
+    age:age,
+    place:place,
+    batch_name: batch,
+    profession: pro
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+       })
+    })
+    
+    const batchfn=()=>{
+        return document.getElementById("batch").value
+    }
+    const professionfn=()=>{
+        return document.getElementById("profession").value}
+        
+</script>

@@ -1,0 +1,93 @@
+body{
+    background-color: aliceblue;
+}
+#navbar{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    background-color:#c14c8a ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 90px;
+    height: 50px;
+    padding: 15px;            
+}
+#samnav{
+    text-decoration: none;
+    color:white;
+    font-weight: bolder;
+    font-size: 30px;
+}
+#samnav:hover{
+    color: red;
+}
+
+#sangam{
+    /* background-color: white; */
+    margin-left: 200px;
+}
+#form{
+    /* border: 1px solid red; */
+    width: 40%;
+}
+.mainBox {  
+    padding: 20px;
+    margin-left: 100px;
+     width: 40%;
+   }
+   #submit{
+    border-radius: 5px;
+    padding: 5px;
+   }
+   #submit:hover{
+    color: white;
+    background-color: black;
+   }
+
+
+.finput {
+    display: flex;
+    flex-flow: column;  
+    align-items: space-around;
+    justify-content: center;
+}
+
+.inBox {
+    display: flex;
+    justify-content: center;
+}
+
+.inBox input {
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.2rem; 
+    color: red;
+}
+
+.cut {
+    color:red; 
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cut:hover,
+.cut:focus {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+.finput button {   
+   padding: 10px;
+    border: 1px solid black;
+    margin: 25px auto 0px auto;
+    font-size: 20px;  
+    border-radius: 5px;
+    cursor: pointer;   
+    color: black;
+}

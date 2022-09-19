@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Sanagm",
+      "age": 29,
+      "place": "Bihar",
+      "batch_name": "WEB-16",
+      "profession": "FSD"
+    },
+    {
+      "id": 1,
+      "name": "Nrupul",
+      "age": 32,
+      "place": "Vijayawada",
+      "batch_name": "WEB-18",
+      "profession": "FSD"
+    },
+    {
+      "id": 1,
+      "name": "yogesh",
+      "age": 39,
+      "place": "Banglore",
+      "batch_name": "WEB-20",
+      "profession": "Bkd"
+    }
+  ]
+}
