@@ -1,0 +1,32 @@
+
+.sangam{
+    display: grid;   
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+    gap:20px;
+}
+@media all and (min-width: 450px) and (max-width: 790px){
+    .sangam{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media all and (min-width: 250px) and (max-width: 450px){
+    .sangam{
+        grid-template-columns: 1fr;
+    }
+}
+
+.mains{
+    /* border: 1px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+
+.desc{
+    background-color: white;
+    color: black;
+    width: 30%;
+    margin-left: 70px;
+}
