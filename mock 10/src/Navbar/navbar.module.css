@@ -1,0 +1,21 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+  justify-content: space-around;
+    height: 70px;
+    width: 100%;
+    background-color:teal;
+    text-decoration: none;
+
+}
+.navbarLink{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-top: 15px;
+    text-decoration: none;
+    font-size:25px;
+    color: white;
+}
+.navbarLink:hover{
+    color:red;
+}
